@@ -9,7 +9,7 @@ namespace Schedule.Controllers
     public class ScheduleController : ControllerBase
     {
         [HttpGet(Name = "GetSchedule")]
-        public BsonDocument Get()
+        public string Get()
         {
             
             const string connectionUri = "mongodb+srv://Brayden:nj1NFMrtiYJefpcs@teamscheduler.iww3k.mongodb.net/?retryWrites=true&w=majority&appName=TeamScheduler";
@@ -19,12 +19,11 @@ namespace Schedule.Controllers
             try {
                 var result = client.GetDatabase("admin").RunCommand<BsonDocument>(new BsonDocument("ping", 1));
                 Console.WriteLine("Pinged your deployment. You successfully connected to MongoDB!");
-                return result;
             } catch (Exception ex) {
                 Console.WriteLine(ex);
             }
 
-            return null;
+            return "hi";
         }
     }
 }
