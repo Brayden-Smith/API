@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f579bf2f-5096-43c4-a668-42b0fe1d0d14" name="Changes" comment="" />
+    <list default="true" id="f579bf2f-5096-43c4-a668-42b0fe1d0d14" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/.idea.API.dir/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/.idea.Schedule/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/.idea.Schedule/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/.idea.Schedule/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/.idea.Schedule/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/.idea.Schedule/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/appsettings.Development.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/appsettings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/rider.project.model.nuget.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,10 +60,28 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
     "ts.external.directory.path": "C:\\Users\\brayd\\WebstormProjects\\schedule\\UI\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/UI/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -53,6 +99,7 @@
       <updated>1729632290908</updated>
       <workItem from="1729632291936" duration="1831000" />
       <workItem from="1729635179418" duration="821000" />
+      <workItem from="1729658546492" duration="2546000" />
     </task>
     <servers />
   </component>
