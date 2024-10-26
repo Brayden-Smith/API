@@ -5,10 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f579bf2f-5096-43c4-a668-42b0fe1d0d14" name="Changes" comment="work">
+      <change afterPath="$PROJECT_DIR$/API/appsettings.Development.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/appsettings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/ScheduleController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/environment.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +104,7 @@
       <workItem from="1729632291936" duration="1831000" />
       <workItem from="1729635179418" duration="821000" />
       <workItem from="1729658546492" duration="3158000" />
-      <workItem from="1729911396589" duration="603000" />
+      <workItem from="1729911396589" duration="2496000" />
     </task>
     <task id="LOCAL-00001" summary="work">
       <option name="closed" value="true" />

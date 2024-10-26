@@ -527,6 +527,3 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-/API/
-/API/
-/API/bin/
