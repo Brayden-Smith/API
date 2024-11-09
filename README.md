@@ -17,8 +17,8 @@ Our goal was to build an intuitive scheduling app that keeps things simple. Shif
 ### Tech Stack
 
 - **Angular** for the front end
-- **Backend**: [Your backend choice here, e.g., Node.js with Express or Django]
-- **Database**: [Database choice, e.g., MongoDB or PostgreSQL]
+- **Backend**: Node.Js
+- **Database**: LocalDB with SQL
 
 ### How It Works
 
