@@ -1,0 +1,52 @@
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+}
+
+/* Focus effect for input boxes */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #4A90E2; /* Light blue border on focus */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+}
+
+/* Optional: style for placeholder text */
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+/* Container for the input fields */
+.input-container {
+  max-width: 400px; /* Adjust width as needed */
+  margin: 0 auto;
+}
+
+/* Button style for login or submit */
+.button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #4A90E2;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #357ABD; /* Darker blue on hover */
+}

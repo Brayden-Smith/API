@@ -1,0 +1,10 @@
+<p>login works!</p>
+
+<form action="/action_page.php">
+  <label for="username">Username:</label><br>
+  <input type="text" id="username" name="username" [(ngModel)]="username" class="input-container"><br>
+  <label for="password">Password:</label><br>
+  <input type="text" id="password" name="password" [(ngModel)]="password" class="input-container"><br>
+</form>
+
+<button (click)="onLogin()">Login</button>

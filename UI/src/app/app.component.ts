@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {Router, RouterLink, RouterOutlet, NavigationEnd} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +10,15 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'schedule';
+  isLogin: boolean = true;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isLogin = false;
+      }
+    });
+  }
+
+
 }
