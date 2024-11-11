@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Schedule.Database;
 using Schedule.Database.Entities;
-using Schedule.Models;
 
 namespace Schedule.Controllers
 {
@@ -10,12 +9,10 @@ namespace Schedule.Controllers
     [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        private readonly ILogger<ShiftsController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public UsersController(ILogger<ShiftsController> logger, ApplicationDbContext context)
+        public UsersController(ApplicationDbContext context)
         {
-            _logger = logger;
             _context = context;
         }
 
