@@ -8,10 +8,12 @@ import { environment } from '../../environment';
 })
 export class LoginService {
   private apiUrl = `${environment.apiUrl}/login`;
+  username: string = "";
 
   constructor(private http: HttpClient) {}
 
   queryLogin(username: string, password: string): Observable<any> {
+    this.username = username;
     return this.http.get<any>(`${this.apiUrl}`, {
       params: {
         username: username,
@@ -19,5 +21,9 @@ export class LoginService {
       },
       responseType: 'text' as 'json'
     });
+  }
+
+  getUser(): string {
+    return this.username;
   }
 }

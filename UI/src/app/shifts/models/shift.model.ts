@@ -5,5 +5,5 @@ export interface Shift {
     name: string;
     dateTime: Date;
     role: Role;
-    userId?: number;
+    username?: string;
   }

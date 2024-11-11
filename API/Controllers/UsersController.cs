@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Schedule.Database;
 using Schedule.Database.Entities;
+using Schedule.Models;
 
 namespace Schedule.Controllers
 {
@@ -19,9 +20,19 @@ namespace Schedule.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<User>> GetShifts()
+        public async Task<IEnumerable<User>> GetUsers()
         {
             return await _context.Users.ToListAsync();
+        }
+        
+        [HttpGet("role/{username}")]
+        public async Task<ActionResult<int>> GetUserRole(string username)
+        {
+            var roleId = await _context.Users
+                .Where(u => u.Username == username)
+                .Select(u => u.Role) // Assuming `RoleId` is the integer field you want to return
+                .FirstOrDefaultAsync();
+            return Ok(roleId);
         }
     }
 }

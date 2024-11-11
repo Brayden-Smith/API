@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Schedule.Database;
 using Schedule.Database.Entities;
 
+
 namespace Schedule.Controllers
 {
     [ApiController]
@@ -22,6 +23,14 @@ namespace Schedule.Controllers
         public async Task<IEnumerable<Shift>> GetShifts()
         {
             return await _context.Shifts.ToListAsync();
+        }
+        
+        [HttpGet("user/{username}")]
+        public async Task<IEnumerable<Shift>> GetUserShifts(string username)
+        {
+            return await _context.Shifts
+                .Where(shift => shift.Username == username)
+                .ToListAsync();
         }
     }
 }

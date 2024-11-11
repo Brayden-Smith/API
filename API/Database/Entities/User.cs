@@ -1,4 +1,6 @@
-﻿namespace Schedule.Database.Entities
+﻿using Schedule.Models;
+
+namespace Schedule.Database.Entities
 {
     public class User
     {
@@ -8,5 +10,6 @@
         public required string Email { get; set; }
         public required string Password { get; set; }
         public required string Username { get; set; }
+        public required Role Role { get; set; }
     }
 }

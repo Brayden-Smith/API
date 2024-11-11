@@ -8,6 +8,6 @@ namespace Schedule.Database.Entities
         public required string Name { get; set; }
         public DateTime DateTime { get; set; }
         public Role Role { get; set; }
-        public int? UserId { get; set; }
+        public string? Username { get; set; }
     }
 }

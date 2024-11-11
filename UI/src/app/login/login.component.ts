@@ -23,6 +23,7 @@ export class LoginComponent {
       response => {
         console.log('Response:', response);
         if (response.trim() === 'Login successful') {
+          localStorage.setItem('username', this.loginService.getUser());
           this.router.navigate(['/home']);
         }
       },

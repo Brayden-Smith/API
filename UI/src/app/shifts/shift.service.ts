@@ -15,4 +15,12 @@ export class ShiftService {
   getShifts(): Observable<Shift[]> {
     return this.http.get<Shift[]>(this.apiUrl);
   }
+
+  getUserShifts(username: string): Observable<Shift[]> {
+    return this.http.get<Shift[]>(`${this.apiUrl}/user/${username}`, {
+      params: {
+        username: username,
+      },
+    });
+  }
 }

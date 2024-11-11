@@ -1,0 +1,7 @@
+<p style="text-align: right; cursor: pointer;" (click)="toggleDropdown()">
+  Welcome, {{ username }}!
+</p>
+
+<div *ngIf="isDropdownOpen" class="dropdown-box">
+  <a (click)="logout()" href="javascript:void(0)">Logout</a>
+</div>
