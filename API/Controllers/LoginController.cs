@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Schedule.Database;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
 
 namespace Schedule.Controllers
 {
@@ -19,7 +22,7 @@ namespace Schedule.Controllers
         public async Task<IActionResult> QueryLogin(String username, String password)
         {
             var userExists = await _context.Users.AnyAsync(u => u.Username == username && u.Password == password);
-
+            //testing testing testing
             if (userExists)
             {
                 return Ok("Login successful");
