@@ -23,4 +23,26 @@ export class ShiftService {
       },
     });
   }
+
+  getShiftsWithNullUsername(): Observable<Shift[]> {
+    return this.http.get<Shift[]>(`${this.apiUrl}/null-username`);
+  }
+
+  updateShiftUsername(id: number, username: string | null): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}/${username}`, username, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  addShift(newShift: Shift): Observable<Shift> {
+    return this.http.post<Shift>(this.apiUrl, newShift, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+
+  updateShift(id: number, updatedShift: Shift): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}`, updatedShift, {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
 }

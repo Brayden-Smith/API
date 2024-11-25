@@ -1,24 +1,20 @@
 import { Component } from '@angular/core';
-import {Router, RouterLink, RouterOutlet, NavigationEnd} from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'schedule';
-  isLogin: boolean = true;
 
   constructor(private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isLogin = false;
-      }
-    });
+    const username = localStorage.getItem('username');
+    if (!username) {
+      this.router.navigate(['/login']);
+    }
   }
-
-
 }

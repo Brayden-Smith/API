@@ -1,10 +1,19 @@
-<p>login works!</p>
+<div class="header-band">
+  <h1>The ShiftMaster Scheduler</h1>
+</div>
 
-<form action="/action_page.php">
-  <label for="username">Username:</label><br>
-  <input type="text" id="username" name="username" [(ngModel)]="username" class="input-container"><br>
-  <label for="password">Password:</label><br>
-  <input type="text" id="password" name="password" [(ngModel)]="password" class="input-container"><br>
-</form>
+<div class="input-container">
+  <!-- Username -->
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" placeholder="Enter your username" [(ngModel)]="username" [ngClass]="{'error': loginError}">
 
-<button (click)="onLogin()">Login</button>
+  <!-- Password -->
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" placeholder="Enter your password" [(ngModel)]="password" [ngClass]="{'error': loginError}">
+
+  <!-- Login Button -->
+  <button class="button" (click)="onLogin()">Login</button>
+
+  <!-- Login Error Message -->
+  <div *ngIf="loginError" class="login-error">Incorrect username or password. Please try again.</div>
+</div>

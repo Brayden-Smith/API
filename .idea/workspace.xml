@@ -5,57 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f579bf2f-5096-43c4-a668-42b0fe1d0d14" name="Changes" comment="work">
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/navbars.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/navbars.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/ShiftsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/ShiftsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Database/Entities/Shift.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Database/Entities/Shift.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Database/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Database/Entities/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Database/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Database/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/Models/Role.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/Models/Role.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/Schedule.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/Schedule.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/UI/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/login.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/login/models/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/models/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/models/shift.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/models/shift.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/shift.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/shift.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/shifts.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/shifts.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/shifts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/shifts.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/shifts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/shifts.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/users/models/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/models/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/users/users.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/users.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/users.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UI/src/app/users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/users.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_2024-11-09_181107507.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,23 +45,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/brayd/WebstormProjects/schedule/UI/src/app/login&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.start.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\brayd\\WebstormProjects\\schedule\\UI\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/brayd/WebstormProjects/TeamScheduler/API",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
+    "ts.external.directory.path": "C:\\Users\\brayd\\WebstormProjects\\schedule\\UI\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brayd\WebstormProjects\schedule\UI\src\app\login" />
@@ -141,7 +92,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
+        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
       </set>
     </attachedChunks>
   </component>
@@ -161,6 +112,7 @@
       <workItem from="1730394072765" duration="792000" />
       <workItem from="1731218680664" duration="10855000" />
       <workItem from="1731287698498" duration="10458000" />
+      <workItem from="1732510825835" duration="361000" />
     </task>
     <task id="LOCAL-00001" summary="work">
       <option name="closed" value="true" />

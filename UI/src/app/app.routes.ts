@@ -1,12 +1,14 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { ShiftsComponent } from './shifts/shifts.component';
 import { UsersComponent } from './users/users.component';
 import { LoginComponent } from './login/login.component';
+import {PickupShiftsComponent} from './shifts/pickup-shifts/pickup-shifts.component';
+import {ManageShiftsComponent} from './shifts/manage-shifts/manage-shifts.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
-    { path: 'shifts', component: ShiftsComponent },
+    { path: 'pickupShifts', component: PickupShiftsComponent },
+    { path: 'manageShifts', component: ManageShiftsComponent },
     { path: 'users', component: UsersComponent },
     { path: 'login', component: LoginComponent },
     { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirect to home by default
