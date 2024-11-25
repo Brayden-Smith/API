@@ -45,4 +45,8 @@ export class ShiftService {
       headers: { 'Content-Type': 'application/json' }
     });
   }
+
+  deleteShift(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

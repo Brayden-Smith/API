@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<app-user-display></app-user-display>
+
+<div class="container">
+  <h2>All Untaken Shifts</h2>
+  <div *ngIf="shifts.length > 0; else noShifts">
+    <table>
+      <thead>
+      <tr>
+        <th (click)="sortTable('name')">Name</th>
+        <th (click)="sortTable('dateTime')">Date</th>
+        <th (click)="sortTable('role')">Role</th>
+        <th>Add Shift</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let shift of shifts">
+        <td>{{ shift.name }}</td>
+        <td>{{ shift.dateTime | date: 'short' }}</td>
+        <td>{{ getRoleString(shift.role) }}</td>
+        <td><button (click)="addShift(shift.id)">Pick up!</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noShifts>
+    <p>No shifts available.</p>
+  </ng-template>
+</div>
