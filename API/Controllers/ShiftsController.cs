@@ -99,5 +99,21 @@ namespace Schedule.Controllers
 
             return NoContent();
         }
+        
+        [HttpGet("{id}/usernames")]
+        public async Task<ActionResult<IEnumerable<string>>> GetUsernamesInShift(int id)
+        {
+            var shift = await _context.Shifts
+                .Where(s => s.Id == id)
+                .Select(s => s.Username)
+                .ToListAsync();
+
+            if (shift == null || !shift.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(shift);
+        }
     }
 }

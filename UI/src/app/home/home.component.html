@@ -1,33 +1,48 @@
 <app-navbar></app-navbar>
 <app-logo-display></app-logo-display>
 
-<p>home works!</p>
-
-
-
-<div>My Shifts</div>
-<div *ngIf="userShifts.length > 0; else noShifts">
-  <table>
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Role</th>
-      <th>Username</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let shift of userShifts">
-      <td>{{ shift.id }}</td>
-      <td>{{ shift.name }}</td>
-      <td>{{ shift.dateTime | date: 'short' }}</td>
-      <td>{{ shift.role }}</td>
-      <td>{{ shift.username }}</td>
-    </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <div class="greeting">Welcome back, {{ username }}!</div>
+  <div *ngIf="nextShift">
+    <div class="subheading">Here is your next shift:</div>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Role</th>
+        <th>Username</th>
+      </tr>
+      <tr>
+        <td>{{ nextShift?.name }}</td>
+        <td>{{ nextShift?.dateTime | date: 'short' }}</td>
+        <td>{{ roleByNumber(nextShift.role) }}</td>
+        <td>{{ nextShift?.username }}</td>
+      </tr>
+    </table>
+    <div class="subheading">Here are the other people working on that date:</div>
+    <ul *ngIf="workersOnNextShift.length > 0; else noWorkers">
+      <li *ngFor="let worker of workersOnNextShift">{{ worker.username }}</li>
+    </ul>
+    <ng-template #noWorkers>
+      <p class="no-workers">No other workers for this shift.</p>
+    </ng-template>
+  </div>
+  <div class="subheading">Here are your remaining shifts for the week:</div>
+  <div *ngIf="remainingShifts.length > 0; else noRemainingShifts">
+    <table>
+      <tr>
+        <th (click)="sortTable('dateTime')">Date</th>
+        <th (click)="sortTable('name')">Name</th>
+        <th (click)="sortTable('role')">Role</th>
+      </tr>
+      <tr *ngFor="let shift of remainingShifts">
+        <td>{{ shift.dateTime | date: 'short' }}</td>
+        <td>{{ shift.name }}</td>
+        <td>{{ roleByNumber(shift.role) }}</td>
+      </tr>
+    </table>
+  </div>
+  <ng-template #noRemainingShifts>
+    <p class="no-workers">No remaining shifts for the week.</p>
+  </ng-template>
 </div>
-<ng-template #noShifts>
-  <p>No shifts available.</p>
-</ng-template>
