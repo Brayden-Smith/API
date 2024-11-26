@@ -1,5 +1,11 @@
-<nav>
-  <button routerLink="/home">Home</button>
-  <button routerLink="/pickupShifts">Plan Shifts</button>
-  <button routerLink="/users">Users</button>
-</nav>
+<div class="layout">
+  <nav>
+    <button routerLink="/home">Home</button>
+    <button routerLink="/pickupShifts">Plan Shifts</button>
+    <button routerLink="/users">Users</button>
+  </nav>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

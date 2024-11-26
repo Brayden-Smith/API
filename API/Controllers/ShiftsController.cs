@@ -66,7 +66,7 @@ namespace Schedule.Controllers
             return CreatedAtAction(nameof(GetShifts), new { id = newShift.Id }, newShift);
         }
         
-        [HttpPut("{id}")]
+        [HttpPut("{id}/update")]
         public async Task<IActionResult> UpdateShift(int id, [FromBody] Shift updatedShift)
         {
             var shift = await _context.Shifts.FindAsync(id);

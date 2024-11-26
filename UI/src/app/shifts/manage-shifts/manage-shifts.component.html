@@ -1,38 +1,36 @@
-<app-navbar></app-navbar>
 
-<app-user-display></app-user-display>
+<app-navbar></app-navbar>
+<app-logo-display></app-logo-display>
 
 <div class="container">
-  <button (click)="toggleForm()">Create New Shift +</button>
-  <div *ngIf="showForm">
-    <h2>Create New Shift</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="task">Task</label>
-        <input type="text" id="task" [(ngModel)]="newShift.name" name="task" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="user">Employee</label>
-        <select id="user" [(ngModel)]="newShift.id" name="user" class="form-control" required>
-          <option *ngFor="let user of users" [value]="user.id">{{ user.firstName }} {{ user.lastName }}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="dateTime">Date and Time</label>
-        <input type="datetime-local" id="dateTime" [(ngModel)]="newShift.dateTime" name="dateTime" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="role">Role</label>
-        <select id="role" [(ngModel)]="newShift.role" name="role" class="form-control" required>
-          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
-        </select>
-      </div>
-      <button type="submit">Create Shift</button>
-    </form>
-  </div>
-</div>
+    <button (click)="toggleForm()" class="form-button">{{ showForm ? 'Click to Close' : 'Create New Shift +' }}</button>
+    <div *ngIf="showForm" class="form-container">
+      <h2>Create New Shift</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="task">Task</label>
+          <input type="text" id="task" [(ngModel)]="newShift.name" name="task" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="user">Employee</label>
+          <select id="user" [(ngModel)]="newShift.id" name="user" class="form-control" required>
+            <option *ngFor="let user of users" [value]="user.id">{{ user.firstName }} {{ user.lastName }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dateTime">Date and Time</label>
+          <input type="datetime-local" id="dateTime" [(ngModel)]="newShift.dateTime" name="dateTime" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="role">Role</label>
+          <select id="role" [(ngModel)]="newShift.role" name="role" class="form-control" required>
+            <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+          </select>
+        </div>
+        <button type="submit">Create Shift</button>
+      </form>
+    </div>
 
-<div>All shifts</div>
 <div *ngIf="shifts.length > 0; else noShifts">
   <table>
     <thead>
@@ -91,3 +89,4 @@
 <ng-template #noShifts>
   <p>No shifts available.</p>
 </ng-template>
+</div>

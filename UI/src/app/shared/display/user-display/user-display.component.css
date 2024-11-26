@@ -1,26 +1,43 @@
 .parent-element {
-  position: relative; /* Ensure the parent element is positioned relatively */
+  position: relative;
+  font-family: 'Arial', sans-serif;
+  padding: 10px;
+  background-color: #37474f; /* Match headband and nav bar color */
+  color: white; /* Match text color */
+  border-radius: 0; /* Remove border radius to match */
+  box-shadow: none; /* Remove box shadow to match */
+  display: inline-block;
+}
+
+.parent-element p {
+  margin: 0;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  text-align: right;
 }
 
 .dropdown-box {
   position: absolute;
-  top: 100%; /* Position the dropdown below the trigger element */
-  right: 0; /* Align the dropdown to the right of the parent element */
-  background-color: white;
+  top: calc(100% + 5px); /* Add some space below the text */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #37474f; /* Match headband and nav bar color */
   border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 0; /* Remove border radius to match */
+  padding: 5px; /* Reduce padding */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
 
 .dropdown-box a {
   text-decoration: none;
-  color: black;
+  color: white; /* Match text color */
   display: block;
-  padding: 5px 0;
+  padding: 2px 0; /* Reduce padding */
+  font-size: 0.9rem; /* Reduce font size */
 }
 
 .dropdown-box a:hover {
-  background-color: #f0f0f0;
+  background-color: #455a64; /* Slightly lighter color for hover effect */
 }

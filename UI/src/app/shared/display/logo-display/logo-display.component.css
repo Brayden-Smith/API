@@ -1,0 +1,25 @@
+.title-headband {
+  background-color: #37474f;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000; /* Ensure headband is behind the nav */
+}
+
+.logo-text {
+  flex-grow: 1;
+}
+
+.user-display {
+  margin-right: 20px;
+}

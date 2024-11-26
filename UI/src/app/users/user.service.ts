@@ -24,4 +24,16 @@ export class UserService {
       },
     });
   }
+
+  createUser(newUser: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, newUser);
+  }
+
+  updateUser(id: number, updatedUser: User): Observable<void> {
+    return this.http.put<void>(`${this.apiUrl}/${id}`, updatedUser);
+  }
+
+  deleteUser(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
 }

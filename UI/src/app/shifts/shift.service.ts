@@ -41,7 +41,7 @@ export class ShiftService {
   }
 
   updateShift(id: number, updatedShift: Shift): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${id}`, updatedShift, {
+    return this.http.put<void>(`${this.apiUrl}/${id}/update`, updatedShift, {
       headers: { 'Content-Type': 'application/json' }
     });
   }

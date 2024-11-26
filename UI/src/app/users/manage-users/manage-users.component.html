@@ -1,3 +1,113 @@
 <app-navbar></app-navbar>
+<app-logo-display></app-logo-display>
 
-<app-user-display></app-user-display>
+
+<div class="container">
+  <button (click)="toggleForm()" class="form-button">{{ showForm ? 'Click to Close' : 'Create New User +' }}</button>
+  <div *ngIf="showForm" class="form-container">
+    <h2>Create New User</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-columns">
+        <div class="form-column">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" [(ngModel)]="newUser.firstName" name="firstName" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" [(ngModel)]="newUser.lastName" name="lastName" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)]="newUser.email" name="email" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-column">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" [(ngModel)]="newUser.username" name="username" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" [(ngModel)]="newUser.password" name="password" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" [(ngModel)]="newUser.role" name="role" class="form-control" required>
+              <option *ngFor="let role of roles" [value]="role.value">{{ role.label }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="submit">Create User</button>
+    </form>
+  </div>
+
+
+
+<div *ngIf="users.length > 0; else noUsers">
+  <table>
+    <thead>
+    <tr>
+      <th (click)="sortTable('firstName')">Employee</th>
+      <th (click)="sortTable('role')">Role</th>
+      <th (click)="sortTable('email')">Email</th>
+      <th (click)="sortTable('username')">Username</th>
+      <th>Password</th>
+      <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users; let i = index">
+      <td *ngIf="editedRow === i; else displayFirstName">
+        <input type="text" [(ngModel)]="editUser.firstName" aria-label="First Name">
+      </td>
+      <ng-template #displayFirstName>
+        <td>{{ user.firstName }} {{ user.lastName }}</td>
+      </ng-template>
+      <td *ngIf="editedRow === i; else displayRole">
+        <select [(ngModel)]="editUser.role" aria-label="Role">
+          <option *ngFor="let role of roles" [value]="role.value">{{ role.label }}</option>
+        </select>
+      </td>
+      <ng-template #displayRole>
+        <td>{{ getRoleLabel(user.role) }}</td>
+      </ng-template>
+      <td *ngIf="editedRow === i; else displayEmail">
+        <input type="email" [(ngModel)]="editUser.email" aria-label="Email">
+      </td>
+      <ng-template #displayEmail>
+        <td>{{ user.email }}</td>
+      </ng-template>
+      <td *ngIf="editedRow === i; else displayUsername">
+        <input type="text" [(ngModel)]="editUser.username" aria-label="Username">
+      </td>
+      <ng-template #displayUsername>
+        <td>{{ user.username }}</td>
+      </ng-template>
+      <td *ngIf="editedRow === i; else displayPassword">
+        <input type="text" [(ngModel)]="editUser.password" aria-label="Password">
+      </td>
+      <ng-template #displayPassword>
+        <td>
+          <span>{{ passwordVisibility[i] ? user.password : '••••••••' }}</span>
+          <span (click)="togglePasswordVisibility(i)" style="cursor: pointer;">
+      {{ passwordVisibility[i] ? '👁️' : '👁️‍🗨️' }}
+    </span>
+        </td>
+      </ng-template>
+      <td>
+        <button (click)="toggleEditRow(i)">
+          <span *ngIf="editedRow === i">&#10003;</span>
+          <span *ngIf="editedRow !== i">&#9998;</span>
+        </button>
+        <button *ngIf="editedRow === i" (click)="deleteUser(user.id)">🗑️</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noUsers>
+  <p>No users available.</p>
+</ng-template>
+</div>

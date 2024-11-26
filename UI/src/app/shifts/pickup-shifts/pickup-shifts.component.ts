@@ -5,17 +5,19 @@ import {NavbarComponent} from '../../shared/display/navbars/navbars.component';
 import {UserDisplayComponent} from '../../shared/display/user-display/user-display.component';
 import {DatePipe, NgForOf, NgIf} from '@angular/common';
 import {Role} from '../models/role.enum';
+import {LogoDisplayComponent} from "../../shared/display/logo-display/logo-display.component";
 
 @Component({
   selector: 'app-pickup-shifts',
   standalone: true,
-  imports: [
-    NavbarComponent,
-    UserDisplayComponent,
-    DatePipe,
-    NgForOf,
-    NgIf
-  ],
+    imports: [
+        NavbarComponent,
+        UserDisplayComponent,
+        DatePipe,
+        NgForOf,
+        NgIf,
+        LogoDisplayComponent
+    ],
   templateUrl: './pickup-shifts.component.html',
   styleUrl: './pickup-shifts.component.css'
 })

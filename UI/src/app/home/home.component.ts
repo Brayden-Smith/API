@@ -8,17 +8,19 @@ import {NavbarComponent} from '../shared/display/navbars/navbars.component';
 import {UserDisplayComponent} from '../shared/display/user-display/user-display.component';
 import {Shift} from '../shifts/models/shift.model';
 import {ShiftService} from '../shifts/shift.service';
+import {LogoDisplayComponent} from "../shared/display/logo-display/logo-display.component";
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    NavbarComponent,
-    UserDisplayComponent
-  ],
+    imports: [
+        CommonModule,
+        RouterLink,
+        NavbarComponent,
+        UserDisplayComponent,
+        LogoDisplayComponent
+    ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

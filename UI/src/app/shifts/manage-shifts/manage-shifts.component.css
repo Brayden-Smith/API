@@ -1,6 +1,25 @@
 .container {
   padding: 20px;
+  width: calc(100% - 270px);
+  height: auto;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-left: 220px;
+  margin-right: 40px;
+}
+
+.form-container {
   max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-button {
+  width: 600px;
+  display: block;
   margin: 0 auto;
 }
 
@@ -84,3 +103,5 @@ tr:last-of-type {
 .edited-row {
   background-color: #ffffcc; /* Light yellow background */
 }
+
+

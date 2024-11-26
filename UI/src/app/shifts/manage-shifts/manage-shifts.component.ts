@@ -8,6 +8,7 @@ import { NavbarComponent } from '../../shared/display/navbars/navbars.component'
 import { UserDisplayComponent } from '../../shared/display/user-display/user-display.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import {LogoDisplayComponent} from '../../shared/display/logo-display/logo-display.component';
 
 @Component({
   selector: 'app-manage-shifts',
@@ -16,7 +17,8 @@ import { CommonModule } from '@angular/common';
     NavbarComponent,
     UserDisplayComponent,
     FormsModule,
-    CommonModule
+    CommonModule,
+    LogoDisplayComponent
   ],
   templateUrl: './manage-shifts.component.html',
   styleUrl: './manage-shifts.component.css'
