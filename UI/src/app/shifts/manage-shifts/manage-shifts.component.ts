@@ -5,7 +5,6 @@ import { Shift } from '../models/shift.model';
 import { User } from '../models/user.model';
 import { Role } from '../models/role.enum';
 import { NavbarComponent } from '../../shared/display/navbars/navbars.component';
-import { UserDisplayComponent } from '../../shared/display/user-display/user-display.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import {LogoDisplayComponent} from '../../shared/display/logo-display/logo-display.component';
@@ -15,7 +14,6 @@ import {LogoDisplayComponent} from '../../shared/display/logo-display/logo-displ
   standalone: true,
   imports: [
     NavbarComponent,
-    UserDisplayComponent,
     FormsModule,
     CommonModule,
     LogoDisplayComponent
@@ -74,9 +72,14 @@ export class ManageShiftsComponent implements OnInit {
 
   onSubmit(): void {
     const user = this.findUserById(this.newShift.id);
+    this.newShift.id = 0;
     const roleNumber = this.findRoleNumberByName(this.newShift.role as unknown as string);
-    if (user && roleNumber !== undefined) {
-      this.newShift.username = user.username;
+    if (roleNumber !== undefined) {
+      if (user) {
+        this.newShift.username = user.username;
+      } else {
+        this.newShift.username = undefined;
+      }
       this.newShift.role = roleNumber;
       console.log('Submitting shift:', this.newShift);
       this.shiftService.addShift(this.newShift).subscribe(() => {
@@ -86,7 +89,7 @@ export class ManageShiftsComponent implements OnInit {
         console.error('Error creating shift:', error);
       });
     } else {
-      console.error('User or role not found');
+      console.error('Role not found');
     }
   }
 

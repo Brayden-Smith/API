@@ -14,6 +14,7 @@
         <div class="form-group">
           <label for="user">Employee</label>
           <select id="user" [(ngModel)]="newShift.id" name="user" class="form-control" required>
+            <option value="">Unassigned</option>
             <option *ngFor="let user of users" [value]="user.id">{{ user.firstName }} {{ user.lastName }}</option>
           </select>
         </div>
