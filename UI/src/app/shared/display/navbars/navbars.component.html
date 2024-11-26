@@ -1,4 +1,4 @@
-<!-- navbar.component.html -->
+<ng-container *ngIf="userRole != -1">
 <div *ngIf="isAdmin; else userTemplate">
   <app-admin-navigation></app-admin-navigation>
 </div>
@@ -6,3 +6,4 @@
 <ng-template #userTemplate>
 <app-non-admin-navigation></app-non-admin-navigation>
 </ng-template>
+</ng-container>
