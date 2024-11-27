@@ -21,17 +21,21 @@ namespace Schedule.Controllers
         {
             return await _context.Users.ToListAsync();
         }
-        
+
         [HttpGet("role/{username}")]
-        public async Task<ActionResult<int>> GetUserRole(string username)
+        public async Task<ActionResult<string[]>> GetUserRoles(string username)
         {
-            var roleId = await _context.Users
+            var roles = await _context.Users
                 .Where(u => u.Username == username)
-                .Select(u => u.Role) // Assuming `RoleId` is the integer field you want to return
+                .Select(u => u.Roles)
                 .FirstOrDefaultAsync();
-            return Ok(roleId);
+            if (roles == null)
+            {
+                return NotFound();
+            }
+            return Ok(roles);
         }
-        
+
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser([FromBody] User newUser)
         {
@@ -40,7 +44,7 @@ namespace Schedule.Controllers
 
             return CreatedAtAction(nameof(GetUsers), new { id = newUser.Id }, newUser);
         }
-        
+
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] User updatedUser)
         {
@@ -55,13 +59,13 @@ namespace Schedule.Controllers
             user.Email = updatedUser.Email;
             user.Password = updatedUser.Password;
             user.Username = updatedUser.Username;
-            user.Role = updatedUser.Role;
+            user.Roles = updatedUser.Roles; // Updated to handle array of strings
 
             await _context.SaveChangesAsync();
 
             return Ok(user);
         }
-        
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Schedule.Database;
 using Schedule.Database.Entities;
 
-
 namespace Schedule.Controllers
 {
     [ApiController]
@@ -24,7 +23,7 @@ namespace Schedule.Controllers
         {
             return await _context.Shifts.ToListAsync();
         }
-        
+
         [HttpGet("user/{username}")]
         public async Task<IEnumerable<Shift>> GetUserShifts(string username)
         {
@@ -32,7 +31,7 @@ namespace Schedule.Controllers
                 .Where(shift => shift.Username == username)
                 .ToListAsync();
         }
-        
+
         [HttpGet("null-username")]
         public async Task<IEnumerable<Shift>> GetShiftsWithNullUsername()
         {
@@ -40,7 +39,7 @@ namespace Schedule.Controllers
                 .Where(shift => shift.Username == null)
                 .ToListAsync();
         }
-        
+
         [HttpPut("{id}/{username}")]
         public async Task<IActionResult> UpdateShiftUsername(int id, string? username)
         {
@@ -54,18 +53,18 @@ namespace Schedule.Controllers
 
             return NoContent();
         }
-        
+
         [HttpPost]
         public async Task<ActionResult<Shift>> AddShift([FromBody] Shift newShift)
         {
             newShift.Id = 0;
-            
+
             _context.Shifts.Add(newShift);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetShifts), new { id = newShift.Id }, newShift);
         }
-        
+
         [HttpPut("{id}/update")]
         public async Task<IActionResult> UpdateShift(int id, [FromBody] Shift updatedShift)
         {
@@ -77,14 +76,14 @@ namespace Schedule.Controllers
 
             shift.Name = updatedShift.Name;
             shift.DateTime = updatedShift.DateTime;
-            shift.Role = updatedShift.Role;
+            shift.Roles = updatedShift.Roles; // Updated to handle array of strings
             shift.Username = updatedShift.Username;
 
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
-        
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteShift(int id)
         {
@@ -99,7 +98,7 @@ namespace Schedule.Controllers
 
             return NoContent();
         }
-        
+
         [HttpGet("{id}/usernames")]
         public async Task<ActionResult<IEnumerable<string>>> GetUsernamesInShift(int id)
         {

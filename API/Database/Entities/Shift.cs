@@ -1,13 +1,11 @@
-﻿using Schedule.Models;
-
-namespace Schedule.Database.Entities
+﻿namespace Schedule.Database.Entities
 {
     public class Shift
     {
         public int Id { get; set; }
         public required string Name { get; set; }
         public DateTime DateTime { get; set; }
-        public Role Role { get; set; }
+        public required string[] Roles { get; set; }
         public string? Username { get; set; }
     }
 }

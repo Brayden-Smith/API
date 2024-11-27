@@ -13,7 +13,6 @@
         "packagesPath": "C:\\Users\\brayd\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\brayd\\WebstormProjects\\TeamScheduler\\API\\obj\\",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
@@ -44,7 +43,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
