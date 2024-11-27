@@ -39,6 +39,30 @@ namespace Schedule.Controllers
                 .Where(shift => shift.Username == null)
                 .ToListAsync();
         }
+        
+        private async Task<bool> CheckUserShiftConflict(int shiftId, string username, DateTime shiftDate)
+        {
+            var existingShift = await _context.Shifts
+                .Where(s => s.Username == username && s.DateTime.Date == shiftDate.Date && s.Id != shiftId)
+                .FirstOrDefaultAsync();
+
+            return existingShift != null;
+        }
+        
+        private async Task<bool> CheckUserRoleConflict(string username, string shiftRole)
+        {
+            var userRoles = await _context.Users
+                .Where(u => u.Username == username)
+                .Select(u => u.Roles)
+                .FirstOrDefaultAsync();
+
+            if (userRoles == null)
+            {
+                return false;
+            }
+
+            return userRoles.Contains(shiftRole);
+        }
 
         [HttpPut("{id}/{username}")]
         public async Task<IActionResult> UpdateShiftUsername(int id, string? username)
@@ -48,15 +72,42 @@ namespace Schedule.Controllers
             {
                 return NotFound();
             }
+
+            if (username != null)
+            {
+                if (await CheckUserShiftConflict(id, username, shift.DateTime))
+                {
+                    return BadRequest("User already has a shift on the same day.");
+                }
+
+                if (!await CheckUserRoleConflict(username, shift.Role))
+                {
+                    return BadRequest("User does not have the required role for this shift.");
+                }
+            }
+
             shift.Username = username;
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
-
+        
         [HttpPost]
         public async Task<ActionResult<Shift>> AddShift([FromBody] Shift newShift)
         {
+            if (newShift.Username != null)
+            {
+                if (await CheckUserShiftConflict(newShift.Id, newShift.Username, newShift.DateTime))
+                {
+                    return BadRequest("User already has a shift on the same day.");
+                }
+
+                if (!await CheckUserRoleConflict(newShift.Username, newShift.Role))
+                {
+                    return BadRequest("User does not have the required role for this shift.");
+                }
+            }
+
             newShift.Id = 0;
 
             _context.Shifts.Add(newShift);
@@ -64,7 +115,7 @@ namespace Schedule.Controllers
 
             return CreatedAtAction(nameof(GetShifts), new { id = newShift.Id }, newShift);
         }
-
+        
         [HttpPut("{id}/update")]
         public async Task<IActionResult> UpdateShift(int id, [FromBody] Shift updatedShift)
         {
@@ -74,9 +125,22 @@ namespace Schedule.Controllers
                 return NotFound();
             }
 
+            if (updatedShift.Username != null)
+            {
+                if (await CheckUserShiftConflict(id, updatedShift.Username, updatedShift.DateTime))
+                {
+                    return BadRequest("User already has a shift on the same day.");
+                }
+
+                if (!await CheckUserRoleConflict(updatedShift.Username, updatedShift.Role))
+                {
+                    return BadRequest("User does not have the required role for this shift.");
+                }
+            }
+
             shift.Name = updatedShift.Name;
             shift.DateTime = updatedShift.DateTime;
-            shift.Roles = updatedShift.Roles; // Updated to handle array of strings
+            shift.Role = updatedShift.Role;
             shift.Username = updatedShift.Username;
 
             await _context.SaveChangesAsync();
@@ -107,7 +171,7 @@ namespace Schedule.Controllers
                 .Select(s => s.Username)
                 .ToListAsync();
 
-            if (shift == null || !shift.Any())
+            if (!shift.Any())
             {
                 return NotFound();
             }

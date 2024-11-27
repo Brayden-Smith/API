@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public required string Name { get; set; }
         public DateTime DateTime { get; set; }
-        public required string[] Roles { get; set; }
+        public required string Role { get; set; }
         public string? Username { get; set; }
     }
 }
