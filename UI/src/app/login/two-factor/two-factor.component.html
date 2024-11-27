@@ -1,14 +1,15 @@
 <div class="code-entry-container">
   <label for="code0">Enter 8-digit code:</label>
   <div class="code-boxes">
-    <input id="code0" type="text" maxlength="1" [(ngModel)]="code[0]" />
-    <input type="text" maxlength="1" [(ngModel)]="code[1]" />
-    <input type="text" maxlength="1" [(ngModel)]="code[2]" />
-    <input type="text" maxlength="1" [(ngModel)]="code[3]" />
-    <input type="text" maxlength="1" [(ngModel)]="code[4]" />
-    <input type="text" maxlength="1" [(ngModel)]="code[5]" />
-    <input type="text" maxlength="1" [(ngModel)]="code[6]" />
-    <input type="text" maxlength="1" [(ngModel)]="code[7]" />
+    <input id="code0" type="text" maxlength="1" [(ngModel)]="code[0]" [ngClass]="{'error': errorMessage}" (input)="moveToNext($event, 1)" (keydown)="moveToPrevious($event, 0)" />
+    <input id="code1" type="text" maxlength="1" [(ngModel)]="code[1]" [ngClass]="{'error': errorMessage}" (input)="moveToNext($event, 2)" (keydown)="moveToPrevious($event, 1)" />
+    <input id="code2" type="text" maxlength="1" [(ngModel)]="code[2]" [ngClass]="{'error': errorMessage}" (input)="moveToNext($event, 3)" (keydown)="moveToPrevious($event, 2)" />
+    <input id="code3" type="text" maxlength="1" [(ngModel)]="code[3]" [ngClass]="{'error': errorMessage}" (input)="moveToNext($event, 4)" (keydown)="moveToPrevious($event, 3)" />
+    <input id="code4" type="text" maxlength="1" [(ngModel)]="code[4]" [ngClass]="{'error': errorMessage}" (input)="moveToNext($event, 5)" (keydown)="moveToPrevious($event, 4)" />
+    <input id="code5" type="text" maxlength="1" [(ngModel)]="code[5]" [ngClass]="{'error': errorMessage}" (input)="moveToNext($event, 6)" (keydown)="moveToPrevious($event, 5)" />
+    <input id="code6" type="text" maxlength="1" [(ngModel)]="code[6]" [ngClass]="{'error': errorMessage}" (input)="moveToNext($event, 7)" (keydown)="moveToPrevious($event, 6)" />
+    <input id="code7" type="text" maxlength="1" [(ngModel)]="code[7]" [ngClass]="{'error': errorMessage}" (input)="moveToNext($event, 8)" (keydown)="moveToPrevious($event, 7)" />
   </div>
   <button (click)="validateCode()">Submit</button>
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
 </div>
