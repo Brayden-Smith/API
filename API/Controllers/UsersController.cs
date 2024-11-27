@@ -15,6 +15,32 @@ namespace Schedule.Controllers
         {
             _context = context;
         }
+        
+        public async Task<bool> CheckRoleExclusivities(string[] roles)
+        {
+            var roleEntities = await _context.Roles
+                .Where(r => roles.Contains(r.Name))
+                .ToListAsync();
+
+            var exclusivities = new HashSet<string>();
+
+            foreach (var role in roleEntities)
+            {
+                if (role.Exclusivities != null)
+                {
+                    foreach (var exclusiveRole in role.Exclusivities)
+                    {
+                        if (exclusivities.Contains(exclusiveRole))
+                        {
+                            return true; // Found two exclusive roles
+                        }
+                        exclusivities.Add(exclusiveRole);
+                    }
+                }
+            }
+
+            return false; // No exclusive roles found
+        }
 
         [HttpGet]
         public async Task<IEnumerable<User>> GetUsers()
@@ -22,7 +48,7 @@ namespace Schedule.Controllers
             return await _context.Users.ToListAsync();
         }
 
-        [HttpGet("role/{username}")]
+        [HttpGet("roles/{username}")]
         public async Task<ActionResult<string[]>> GetUserRoles(string username)
         {
             var roles = await _context.Users
@@ -39,6 +65,11 @@ namespace Schedule.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser([FromBody] User newUser)
         {
+            if (await CheckRoleExclusivities(newUser.Roles))
+            {
+                return BadRequest("User roles contain exclusivities.");
+            }
+
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
 
@@ -52,6 +83,11 @@ namespace Schedule.Controllers
             if (user == null)
             {
                 return NotFound();
+            }
+
+            if (await CheckRoleExclusivities(updatedUser.Roles))
+            {
+                return BadRequest("User roles contain exclusivities.");
             }
 
             user.FirstName = updatedUser.FirstName;

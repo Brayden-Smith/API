@@ -9,6 +9,7 @@ namespace Schedule.Database
 
         public DbSet<Shift> Shifts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
