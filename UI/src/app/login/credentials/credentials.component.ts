@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { LoginService } from './login.service';
-import {CommonModule} from '@angular/common';
+import { LoginService } from '../login.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-credentials',
   standalone: true,
   imports: [FormsModule, CommonModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './credentials.component.html',
+  styleUrls: ['./credentials.component.css']
 })
-export class LoginComponent {
+export class CredentialsComponent {
+  @Input() loggedIn: boolean = false;
+  @Output() loggedInChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor(private router: Router, private loginService: LoginService) {}
+
   username: string = '';
   password: string = '';
   isLoggingIn: boolean = false;
@@ -27,7 +31,8 @@ export class LoginComponent {
         console.log('Response:', response);
         if (response.trim() === 'Login successful') {
           localStorage.setItem('username', this.loginService.getUser());
-          this.router.navigate(['/home']);
+          this.loggedIn = true;
+          this.loggedInChange.emit(this.loggedIn);
         } else {
           this.loginError = true;
         }

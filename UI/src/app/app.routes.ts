@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/view users/users.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login/login';
 import {PickupShiftsComponent} from './shifts/pickup-shifts/pickup-shifts.component';
 import {ManageShiftsComponent} from './shifts/manage-shifts/manage-shifts.component';
 import {ManageUsersComponent} from './users/manage-users/manage-users.component';
