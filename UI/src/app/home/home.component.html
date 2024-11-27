@@ -13,10 +13,10 @@
         <th>Username</th>
       </tr>
       <tr>
-        <td>{{ nextShift?.name }}</td>
-        <td>{{ nextShift?.dateTime | date: 'short' }}</td>
+        <td>{{ nextShift.name }}</td>
+        <td>{{ nextShift.dateTime | date: 'short' }}</td>
         <td>{{ roleByNumber(nextShift.role) }}</td>
-        <td>{{ nextShift?.username }}</td>
+        <td>{{ nextShift.username }}</td>
       </tr>
     </table>
     <div class="subheading">Here are the other people working on that date:</div>
