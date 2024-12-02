@@ -16,7 +16,7 @@ namespace Schedule.Controllers
             _context = context;
         }
         
-        public async Task<bool> CheckRoleExclusivities(string[] roles)
+        /*public async Task<bool> CheckRoleExclusivities(string[] roles)
         {
             var roleEntities = await _context.Roles
                 .Where(r => roles.Contains(r.Name))
@@ -40,7 +40,7 @@ namespace Schedule.Controllers
             }
 
             return false; // No exclusive roles found
-        }
+        }*/
 
         [HttpGet]
         public async Task<IEnumerable<User>> GetUsers()
@@ -65,10 +65,10 @@ namespace Schedule.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser([FromBody] User newUser)
         {
-            if (await CheckRoleExclusivities(newUser.Roles))
+            /*if (await CheckRoleExclusivities(newUser.Roles))
             {
                 return BadRequest("User roles contain exclusivities.");
-            }
+            }*/
 
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
@@ -85,10 +85,10 @@ namespace Schedule.Controllers
                 return NotFound();
             }
 
-            if (await CheckRoleExclusivities(updatedUser.Roles))
+            /*if (await CheckRoleExclusivities(updatedUser.Roles))
             {
                 return BadRequest("User roles contain exclusivities.");
-            }
+            }*/
 
             user.FirstName = updatedUser.FirstName;
             user.LastName = updatedUser.LastName;

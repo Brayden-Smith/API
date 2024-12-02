@@ -4786,31 +4786,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\brayd\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\22and\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brayd\\WebstormProjects\\TeamScheduler\\API\\Schedule.csproj",
+      "projectUniqueName": "C:\\Users\\22and\\RiderProjects\\TeamScheduler\\API\\Schedule.csproj",
       "projectName": "Schedule",
-      "projectPath": "C:\\Users\\brayd\\WebstormProjects\\TeamScheduler\\API\\Schedule.csproj",
-      "packagesPath": "C:\\Users\\brayd\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brayd\\WebstormProjects\\TeamScheduler\\API\\obj\\",
+      "projectPath": "C:\\Users\\22and\\RiderProjects\\TeamScheduler\\API\\Schedule.csproj",
+      "packagesPath": "C:\\Users\\22and\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\22and\\RiderProjects\\TeamScheduler\\API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\brayd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\22and\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4828,8 +4821,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -4872,19 +4864,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
+            "version": "[8.0.10, 8.0.10]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.11, 8.0.11]"
+            "version": "[8.0.10, 8.0.10]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
+            "version": "[8.0.10, 8.0.10]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.11, 8.0.11]"
+            "version": "[8.0.10, 8.0.10]"
           }
         ],
         "frameworkReferences": {
@@ -4895,7 +4887,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
