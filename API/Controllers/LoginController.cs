@@ -25,7 +25,8 @@ namespace Schedule.Controllers
             //testing testing testing
             if (userExists)
             {
-                /*var smtpClient = new SmtpClient("smtp.gmail.com")
+                /*
+                var smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
                     Credentials = new NetworkCredential("username", "password"),
@@ -40,7 +41,8 @@ namespace Schedule.Controllers
                 };
                 mailMessage.To.Add("recipient");
 
-                smtpClient.Send(mailMessage);*/
+                smtpClient.Send(mailMessage);
+                */
                 return Ok("Login successful");
             }
             else

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Schedule.Database;
 using Schedule.Database.Entities;
 
+
 namespace Schedule.Controllers
 {
     [ApiController]
@@ -23,7 +24,7 @@ namespace Schedule.Controllers
         {
             return await _context.Shifts.ToListAsync();
         }
-
+        
         [HttpGet("user/{username}")]
         public async Task<IEnumerable<Shift>> GetUserShifts(string username)
         {
@@ -31,7 +32,7 @@ namespace Schedule.Controllers
                 .Where(shift => shift.Username == username)
                 .ToListAsync();
         }
-
+        
         [HttpGet("null-username")]
         public async Task<IEnumerable<Shift>> GetShiftsWithNullUsername()
         {
@@ -40,30 +41,6 @@ namespace Schedule.Controllers
                 .ToListAsync();
         }
         
-        private async Task<bool> CheckUserShiftConflict(int shiftId, string username, DateTime shiftDate)
-        {
-            var existingShift = await _context.Shifts
-                .Where(s => s.Username == username && s.DateTime.Date == shiftDate.Date && s.Id != shiftId)
-                .FirstOrDefaultAsync();
-
-            return existingShift != null;
-        }
-        
-        private async Task<bool> CheckUserRoleConflict(string username, string shiftRole)
-        {
-            var userRoles = await _context.Users
-                .Where(u => u.Username == username)
-                .Select(u => u.Roles)
-                .FirstOrDefaultAsync();
-
-            if (userRoles == null)
-            {
-                return false;
-            }
-
-            return userRoles.Contains(shiftRole);
-        }
-
         [HttpPut("{id}/{username}")]
         public async Task<IActionResult> UpdateShiftUsername(int id, string? username)
         {
@@ -72,20 +49,6 @@ namespace Schedule.Controllers
             {
                 return NotFound();
             }
-
-            if (username != null)
-            {
-                if (await CheckUserShiftConflict(id, username, shift.DateTime))
-                {
-                    return BadRequest("User already has a shift on the same day.");
-                }
-
-                if (!await CheckUserRoleConflict(username, shift.Role))
-                {
-                    return BadRequest("User does not have the required role for this shift.");
-                }
-            }
-
             shift.Username = username;
             await _context.SaveChangesAsync();
 
@@ -95,21 +58,8 @@ namespace Schedule.Controllers
         [HttpPost]
         public async Task<ActionResult<Shift>> AddShift([FromBody] Shift newShift)
         {
-            if (newShift.Username != null)
-            {
-                if (await CheckUserShiftConflict(newShift.Id, newShift.Username, newShift.DateTime))
-                {
-                    return BadRequest("User already has a shift on the same day.");
-                }
-
-                if (!await CheckUserRoleConflict(newShift.Username, newShift.Role))
-                {
-                    return BadRequest("User does not have the required role for this shift.");
-                }
-            }
-
             newShift.Id = 0;
-
+            
             _context.Shifts.Add(newShift);
             await _context.SaveChangesAsync();
 
@@ -125,19 +75,6 @@ namespace Schedule.Controllers
                 return NotFound();
             }
 
-            if (updatedShift.Username != null)
-            {
-                if (await CheckUserShiftConflict(id, updatedShift.Username, updatedShift.DateTime))
-                {
-                    return BadRequest("User already has a shift on the same day.");
-                }
-
-                if (!await CheckUserRoleConflict(updatedShift.Username, updatedShift.Role))
-                {
-                    return BadRequest("User does not have the required role for this shift.");
-                }
-            }
-
             shift.Name = updatedShift.Name;
             shift.DateTime = updatedShift.DateTime;
             shift.Role = updatedShift.Role;
@@ -147,7 +84,7 @@ namespace Schedule.Controllers
 
             return NoContent();
         }
-
+        
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteShift(int id)
         {
@@ -162,21 +99,30 @@ namespace Schedule.Controllers
 
             return NoContent();
         }
-
+        
         [HttpGet("{id}/usernames")]
         public async Task<ActionResult<IEnumerable<string>>> GetUsernamesInShift(int id)
         {
-            var shift = await _context.Shifts
-                .Where(s => s.Id == id)
-                .Select(s => s.Username)
-                .ToListAsync();
-
-            if (!shift.Any())
+            var shift = await _context.Shifts.FindAsync(id);
+            if (shift == null)
             {
                 return NotFound();
             }
 
-            return Ok(shift);
+            var shiftDate = shift.DateTime.Date;
+
+            var usernames = await _context.Shifts
+                .Where(s => s.DateTime.Date == shiftDate && s.Username != null)
+                .Select(s => s.Username)
+                .Distinct()
+                .ToListAsync();
+
+            if (usernames == null || !usernames.Any())
+            {
+                return NotFound();
+            }
+
+            return Ok(usernames);
         }
     }
 }

@@ -15,32 +15,6 @@ namespace Schedule.Controllers
         {
             _context = context;
         }
-        
-        /*public async Task<bool> CheckRoleExclusivities(string[] roles)
-        {
-            var roleEntities = await _context.Roles
-                .Where(r => roles.Contains(r.Name))
-                .ToListAsync();
-
-            var exclusivities = new HashSet<string>();
-
-            foreach (var role in roleEntities)
-            {
-                if (role.Exclusivities != null)
-                {
-                    foreach (var exclusiveRole in role.Exclusivities)
-                    {
-                        if (exclusivities.Contains(exclusiveRole))
-                        {
-                            return true; // Found two exclusive roles
-                        }
-                        exclusivities.Add(exclusiveRole);
-                    }
-                }
-            }
-
-            return false; // No exclusive roles found
-        }*/
 
         [HttpGet]
         public async Task<IEnumerable<User>> GetUsers()
@@ -48,28 +22,19 @@ namespace Schedule.Controllers
             return await _context.Users.ToListAsync();
         }
 
-        [HttpGet("roles/{username}")]
-        public async Task<ActionResult<string[]>> GetUserRoles(string username)
+        [HttpGet("role/{username}")]
+        public async Task<ActionResult<int>> GetUserRole(string username)
         {
-            var roles = await _context.Users
+            var roleId = await _context.Users
                 .Where(u => u.Username == username)
-                .Select(u => u.Roles)
+                .Select(u => u.Role) // Assuming `RoleId` is the integer field you want to return
                 .FirstOrDefaultAsync();
-            if (roles == null)
-            {
-                return NotFound();
-            }
-            return Ok(roles);
+            return Ok(roleId);
         }
 
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser([FromBody] User newUser)
         {
-            /*if (await CheckRoleExclusivities(newUser.Roles))
-            {
-                return BadRequest("User roles contain exclusivities.");
-            }*/
-
             _context.Users.Add(newUser);
             await _context.SaveChangesAsync();
 
@@ -85,17 +50,12 @@ namespace Schedule.Controllers
                 return NotFound();
             }
 
-            /*if (await CheckRoleExclusivities(updatedUser.Roles))
-            {
-                return BadRequest("User roles contain exclusivities.");
-            }*/
-
             user.FirstName = updatedUser.FirstName;
             user.LastName = updatedUser.LastName;
             user.Email = updatedUser.Email;
             user.Password = updatedUser.Password;
             user.Username = updatedUser.Username;
-            user.Roles = updatedUser.Roles; // Updated to handle array of strings
+            user.Role = updatedUser.Role;
 
             await _context.SaveChangesAsync();
 
