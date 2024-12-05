@@ -20,6 +20,7 @@ export class ShiftService {
     });
   }
 
+  //gets all of the works on the same day as a shift
   getUsernamesForShift(id: number): Observable<string[]> {
     return this.http.get<string[]>(`${this.apiUrl}/${id}/usernames`);
   }

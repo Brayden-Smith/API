@@ -4,8 +4,73 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f579bf2f-5096-43c4-a668-42b0fe1d0d14" name="Changes" comment="work">
+    <list default="true" id="f579bf2f-5096-43c4-a668-42b0fe1d0d14" name="Changes" comment="Final commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/bin/Debug/net8.0/Schedule.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/Schedule.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/ref/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/Schedule.dll" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/Debug/net8.0/refint/Schedule.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/API/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/home/shift.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/home/shift.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/credentials/credentials.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/credentials/credentials.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/credentials/credentials.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/credentials/credentials.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/credentials/credentials.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/two-factor/two-factor.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/two-factor/two-factor.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/two-factor/two-factor.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/two-factor/two-factor.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/two-factor/two-factor.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/login/two-factor/two-factor.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/login/two-factor/two-factor.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/logo-display/logo-display.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/logo-display/logo-display.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/logo-display/logo-display.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/logo-display/logo-display.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/logo-display/logo-display.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/admin-navigation/admin-navigation.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/navbars.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/navbars.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/navbars.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/navbars.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/navbars/non-admin-navigation/non-admin-navigation.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shared/display/user-display/user-display.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/manage-shifts/manage-shifts.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/manage-shifts/manage-shifts.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/manage-shifts/manage-shifts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/manage-shifts/manage-shifts.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/manage-shifts/manage-shifts.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/manage-shifts/manage-shifts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/manage-shifts/manage-shifts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/pickup-shifts/pickup-shifts.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/pickup-shifts/pickup-shifts.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/pickup-shifts/pickup-shifts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/pickup-shifts/pickup-shifts.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/pickup-shifts/pickup-shifts.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/pickup-shifts/pickup-shifts.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/pickup-shifts/pickup-shifts.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/shifts/shift.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/shifts/shift.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/manage-users/manage-users.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/manage-users/manage-users.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/manage-users/manage-users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/manage-users/manage-users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/manage-users/manage-users.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/manage-users/manage-users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/manage-users/manage-users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/models/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/models/user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/user.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/view users/users.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/view users/users.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/view users/users.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/view users/users.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/view users/users.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/app/users/view users/users.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/app/users/view users/users.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UI/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/UI/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +88,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -45,24 +111,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/brayd/WebstormProjects/TeamScheduler/API",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.start.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\brayd\\WebstormProjects\\schedule\\UI\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/brayd/WebstormProjects/TeamScheduler/API&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\brayd\\WebstormProjects\\schedule\\UI\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\brayd\WebstormProjects\schedule\UI\src\app\login" />
@@ -92,7 +158,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-WS-243.21565.180" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
       </set>
     </attachedChunks>
   </component>
@@ -113,6 +179,8 @@
       <workItem from="1731218680664" duration="10855000" />
       <workItem from="1731287698498" duration="10458000" />
       <workItem from="1732510825835" duration="361000" />
+      <workItem from="1733254682582" duration="4185000" />
+      <workItem from="1733418104292" duration="3195000" />
     </task>
     <task id="LOCAL-00001" summary="work">
       <option name="closed" value="true" />
@@ -122,14 +190,44 @@
       <option name="project" value="LOCAL" />
       <updated>1729661160067</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Final commit">
+      <option name="closed" value="true" />
+      <created>1733261534753</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733261534753</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="work" />
-    <option name="LAST_COMMIT_MESSAGE" value="work" />
+    <MESSAGE value="Final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/UI/src/app/home/shift.service.ts</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

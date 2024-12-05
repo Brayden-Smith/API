@@ -36,6 +36,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
+  //if the table is clicked, sort the table by the column clicked
   sortOrder: { [key: string]: boolean } = {};
   sortTable(column: keyof User): void {
     const sortOrder = this.sortOrder[column] = !this.sortOrder[column];
@@ -43,6 +44,7 @@ export class UsersComponent implements OnInit {
       let aValue = a[column];
       let bValue = b[column];
 
+      //make sure we enum convert
       if (column === 'role') {
         aValue = Role[aValue as number];
         bValue = Role[bValue as number];
@@ -52,6 +54,7 @@ export class UsersComponent implements OnInit {
         return 0;
       }
 
+      //make it not case sensitive. also have to be careful of null data
       const aString = aValue !== null ? String(aValue).toLowerCase() : null;
       const bString = bValue !== null ? String(bValue).toLowerCase() : null;
 

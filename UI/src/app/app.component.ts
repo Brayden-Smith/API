@@ -11,6 +11,7 @@ import { Router, RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'schedule';
 
+  //if you are not logged in, you will be redirected to the login page
   constructor(private router: Router) {
     const username = localStorage.getItem('username');
     if (!username) {

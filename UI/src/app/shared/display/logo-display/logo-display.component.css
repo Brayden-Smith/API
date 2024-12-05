@@ -1,3 +1,4 @@
+
 .title-headband {
   background-color: #37474f;
   color: white;
@@ -19,7 +20,7 @@
 .logo-text {
   flex-grow: 1;
 }
-
+/*user display is on the right*/
 .user-display {
   margin-right: 20px;
 }

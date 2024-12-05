@@ -16,11 +16,13 @@ export class UserDisplayComponent implements OnInit {
 
   constructor(private router: Router, private loginService: LoginService) {}
 
+  //show the log-out drop down
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
     console.log("isDropdownOpen: ", this.isDropdownOpen);
   }
 
+  //remove the logged-in user and go back to log in screen
   logout() {
     localStorage.removeItem('username'); // Clear the stored username
     this.username = ''; // Reset the username in the component
@@ -28,6 +30,7 @@ export class UserDisplayComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
+  //get the username so we can display it
   ngOnInit(): void {
     this.username = localStorage.getItem('username') || '';
   }

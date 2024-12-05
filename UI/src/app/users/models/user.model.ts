@@ -5,7 +5,7 @@ export interface User {
     firstName: string;
     lastName: string;
     email: string;
-  username: string;
-  password: string;
-  role: Role;
+    username: string;
+    password: string;
+    role: Role;
   }

@@ -18,6 +18,7 @@ export class TwoFactorComponent {
   code: string[] = ['', '', '', '', '', '', '', ''];
   errorMessage: string = '';
 
+  //move to next input box
   moveToNext(event: Event, nextIndex: number) {
     const input = event.target as HTMLInputElement;
     if (input.value.length === 1 && nextIndex < this.code.length) {
@@ -28,6 +29,7 @@ export class TwoFactorComponent {
     }
   }
 
+  //move back a box
   moveToPrevious(event: KeyboardEvent, currentIndex: number) {
     const input = event.target as HTMLInputElement;
     if (event.key === 'Backspace' && input.value.length === 0 && currentIndex > 0) {
@@ -38,6 +40,7 @@ export class TwoFactorComponent {
     }
   }
 
+  //service check. regex checks if its all numbers
   validateCode() {
     const codeString = this.code.join('');
     if (codeString.length === 8 && /^\d+$/.test(codeString)) {

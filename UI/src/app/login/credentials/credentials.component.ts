@@ -22,6 +22,7 @@ export class CredentialsComponent {
   isLoggingIn: boolean = false;
   loginError: boolean = false;
 
+  // Function to handle the login button click
   onLogin() {
     this.isLoggingIn = true;
     this.loginError = false;

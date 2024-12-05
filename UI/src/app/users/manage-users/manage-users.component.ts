@@ -29,6 +29,7 @@ export class ManageUsersComponent {
   editUser: User = { id: 0, firstName: '', lastName: '', email: '', username: '', password: '', role: 1 };
   showForm: boolean = false;
   users: User[] = [];
+  //imma be real with you chief, I have no idea what this is doing i just added stuff until it worked
   roles = Object.keys(Role).filter(key => isNaN(Number(key))).map(key => ({ value: (Role as any)[key], label: key }));
   editedRow: number | null = null;
 
@@ -42,6 +43,7 @@ export class ManageUsersComponent {
     this.showForm = !this.showForm;
   }
 
+  //add new user based on the input boxes
   onSubmit(): void {
     this.newUser.role = Number(this.newUser.role); // Convert role to integer
     this.userService.createUser(this.newUser).subscribe((user: User) => {
@@ -51,17 +53,20 @@ export class ManageUsersComponent {
     });
   }
 
+  //fill out list of users
   loadUsers(): void {
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
     });
   }
 
+  //litterally just enum convertor
   getRoleLabel(role: number): string {
     const roleObj = this.roles.find(r => r.value === role);
     return roleObj ? roleObj.label : '';
   }
 
+  //sorts the table based on which column was clicked
   sortOrder: { [key: string]: boolean } = {};
   sortTable(column: keyof User): void {
     const sortOrder = this.sortOrder[column] = !this.sortOrder[column];
@@ -69,11 +74,14 @@ export class ManageUsersComponent {
       let aValue = a[column];
       let bValue = b[column];
 
+      //make sure to enum convert
       if (column === 'role') {
         aValue = Role[aValue as number];
         bValue = Role[bValue as number];
       }
 
+
+      //check for null and case senstive
       if (aValue === undefined || bValue === undefined) {
         return 0;
       }
@@ -93,6 +101,7 @@ export class ManageUsersComponent {
     });
   }
 
+  //if edit button is clicked then we either have to set that row to be edited or we are done and can update user
   toggleEditRow(index: number): void {
     if (this.editedRow === index) {
       this.editUser.role = Number(this.editUser.role);
@@ -107,6 +116,7 @@ export class ManageUsersComponent {
     }
   }
 
+  //just service call to delete user
   deleteUser(id: number): void {
     this.userService.deleteUser(id).subscribe(() => {
       this.loadUsers();
@@ -116,6 +126,7 @@ export class ManageUsersComponent {
 
   passwordVisibility: { [key: number]: boolean } = {};
 
+  //change if password is in plaintext
   togglePasswordVisibility(index: number): void {
     this.passwordVisibility[index] = !this.passwordVisibility[index];
   }

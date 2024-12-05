@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
   userRole: number = -1;
   isAdmin: boolean = false;
 
+  //checks to see if user is admin asap
   ngOnInit(): void {
     this.username = localStorage.getItem('username') || '';
 

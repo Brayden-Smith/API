@@ -28,17 +28,20 @@ export class PickupShiftsComponent implements OnInit{
 
   constructor(private shiftService: ShiftService) {}
 
+  //make sure we load the shifts asap
   ngOnInit(): void {
     this.username = localStorage.getItem('username') || '';
     this.loadShifts();
   }
 
+  //gets list of all shifts with null username
   loadShifts(): void {
     this.shiftService.getShiftsWithNullUsername().subscribe((data: Shift[]) => {
       this.shifts = data;
     });
   }
 
+  //just runs the update service
   addShift(shiftId: number): void {
     this.shiftService.updateShiftUsername(shiftId, this.username).subscribe(() => {
       console.log(`Shift ID: ${shiftId} has been updated with username: ${this.username}`);
@@ -48,17 +51,20 @@ export class PickupShiftsComponent implements OnInit{
     });
   }
 
+  //sorts the table if column header is clicked
   sortTable(column: keyof Shift): void {
     const sortOrder = this.sortOrder[column] = !this.sortOrder[column];
     this.shifts.sort((a, b) => {
       let aValue = a[column];
       let bValue = b[column];
 
+      //enum convertor
       if (column === 'role') {
         aValue = Role[aValue as number];
         bValue = Role[bValue as number];
       }
 
+      //check for null or case sensitive strings
       if (aValue === undefined || bValue === undefined) {
         return 0;
       }
@@ -78,6 +84,7 @@ export class PickupShiftsComponent implements OnInit{
     });
   }
 
+  //enum convertor
   getRoleString(roleNumber: number): string {
     return Role[roleNumber];
   }

@@ -1,3 +1,4 @@
+/* make sure we dont overlap navbars*/
 .container {
   padding: 20px;
   width: calc(100% - 270px);
@@ -8,6 +9,7 @@
   margin-right: 40px;
 }
 
+/*table styling*/
 table {
   width: 100%;
   border-collapse: collapse;

@@ -13,10 +13,12 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  //gets the entire lsit of users
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiUrl);
   }
 
+  //gets the role of a single user. assumes username is unique
   getUserRole(username: string): Observable<number> {
     return this.http.get<number>(`${this.apiUrl}/role/${username}`, {
       params: {
@@ -25,10 +27,12 @@ export class UserService {
     });
   }
 
+  //post command to create a new user
   createUser(newUser: User): Observable<User> {
     return this.http.post<User>(this.apiUrl, newUser);
   }
 
+  //changes any part of a user from the edit table
   updateUser(id: number, updatedUser: User): Observable<void> {
     return this.http.put<void>(`${this.apiUrl}/${id}`, updatedUser);
   }

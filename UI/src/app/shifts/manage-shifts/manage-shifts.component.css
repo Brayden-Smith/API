@@ -1,3 +1,4 @@
+/*make sure we don't overlap the navbars*/
 .container {
   padding: 20px;
   width: calc(100% - 270px);
@@ -7,7 +8,7 @@
   margin-left: 220px;
   margin-right: 40px;
 }
-
+/*styling for the shift submission form*/
 .form-container {
   max-width: 600px;
   margin: 0 auto;
@@ -63,6 +64,7 @@ button:hover {
   background-color: #007f63;
 }
 
+/*styling for the table*/
 table {
   width: 100%;
   border-collapse: collapse;
@@ -98,10 +100,6 @@ tr:nth-of-type(even) {
 
 tr:last-of-type {
   border-bottom: 2px solid #009879;
-}
-
-.edited-row {
-  background-color: #ffffcc; /* Light yellow background */
 }
 
 

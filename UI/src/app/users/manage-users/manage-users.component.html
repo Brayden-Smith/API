@@ -1,7 +1,8 @@
 <app-navbar></app-navbar>
 <app-logo-display></app-logo-display>
 
-
+<!--This is the form for creating a new user. if show form is true it pops out. it is then a list of input boxes
+When clicked it sends all this info to onSubmit()-->
 <div class="container">
   <button (click)="toggleForm()" class="form-button">{{ showForm ? 'Click to Close' : 'Create New User +' }}</button>
   <div *ngIf="showForm" class="form-container">
@@ -44,7 +45,8 @@
   </div>
 
 
-
+<!--Table that shows all of the users. Passwords are hidden unless you click the eye. allows sorting.
+have to make the entries into input boxes if its in edit mode. It's really long because of edit mode-->
 <div *ngIf="users.length > 0; else noUsers">
   <table>
     <thead>

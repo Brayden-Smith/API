@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 <app-logo-display></app-logo-display>
 
+<!--show the next shift and all workers on that shift-->
 <div class="container">
   <div class="greeting">Welcome back, {{ username }}!</div>
   <div *ngIf="nextShift">
@@ -28,6 +29,8 @@
     </ng-template>
   </div>
   <div class="subheading">Here are your remaining shifts for the week:</div>
+
+  <!--table to show the remaining shifts-->
   <div *ngIf="remainingShifts.length > 0; else noRemainingShifts">
     <table>
       <tr>

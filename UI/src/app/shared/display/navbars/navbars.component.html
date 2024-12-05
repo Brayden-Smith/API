@@ -1,3 +1,5 @@
+<!--go to navbar depending on if the user is an admin or not-->
+
 <ng-container *ngIf="userRole != -1">
 <div *ngIf="isAdmin; else userTemplate">
   <app-admin-navigation></app-admin-navigation>

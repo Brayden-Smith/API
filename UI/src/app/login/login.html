@@ -1,6 +1,6 @@
 <div class="header-band">
   <h1>The ShiftMaster Scheduler</h1>
 </div>
-
+<!--runs subcomponents and waits for an output change-->
 <app-credentials *ngIf="!loggedIn" [loggedIn]="loggedIn" (loggedInChange)="onLoggedInChange($event)"></app-credentials>
 <app-two-factor *ngIf="loggedIn && !twoFactored" [twoFactored]="twoFactored" (twoFactoredChange)="onTwoFactoredChange($event)"></app-two-factor>

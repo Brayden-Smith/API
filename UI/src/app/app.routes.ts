@@ -6,6 +6,7 @@ import {PickupShiftsComponent} from './shifts/pickup-shifts/pickup-shifts.compon
 import {ManageShiftsComponent} from './shifts/manage-shifts/manage-shifts.component';
 import {ManageUsersComponent} from './users/manage-users/manage-users.component';
 
+//general routes. Makes sure to default to login
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'pickupShifts', component: PickupShiftsComponent },

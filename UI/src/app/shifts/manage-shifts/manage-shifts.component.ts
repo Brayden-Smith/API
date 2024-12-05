@@ -33,15 +33,18 @@ export class ManageShiftsComponent implements OnInit {
   constructor(private shiftService: ShiftService, private userService: UserService) {}
   sortOrder: { [key: string]: boolean } = {};
 
+  //make sure we load data asap
   ngOnInit(): void {
     this.loadShifts();
     this.loadUsers();
   }
 
+  //enum convertor
   findRoleNumberByName(roleName: string): number | undefined {
     return Role[roleName as keyof typeof Role];
   }
 
+  //load in the shifts. we have to make sure to collude with userlist to get full names for the usernames
   loadShifts(): void {
     this.shiftService.getShifts().subscribe((shifts: Shift[]) => {
       this.userService.getUsers().subscribe((users: User[]) => {
@@ -56,20 +59,24 @@ export class ManageShiftsComponent implements OnInit {
     });
   }
 
+  //simple service call
   loadUsers(): void {
     this.userService.getUsers().subscribe((data: User[]) => {
       this.users = data;
     });
   }
 
+  //can we see the shift form?
   toggleForm(): void {
     this.showForm = !this.showForm;
   }
 
+  //enum convertor
   findUserById(id: number): User | undefined {
     return this.users.find(user => user.id === Number(id));
   }
 
+  //check to make sure shift submission form won't cause error then do service call to create shift
   onSubmit(): void {
     const user = this.findUserById(this.newShift.id);
     this.newShift.id = 0;
@@ -93,17 +100,20 @@ export class ManageShiftsComponent implements OnInit {
     }
   }
 
+  //sort the table if the columns are clicked
   sortTable(column: keyof Shift): void {
     const sortOrder = this.sortOrder[column] = !this.sortOrder[column];
     this.shifts.sort((a, b) => {
       let aValue = a[column];
       let bValue = b[column];
 
+      //enum convert
       if (column === 'role') {
         aValue = Role[aValue as number];
         bValue = Role[bValue as number];
       }
 
+      //check for null or case sensitivity
       if (aValue === undefined || bValue === undefined) {
         return 0;
       }
@@ -123,10 +133,12 @@ export class ManageShiftsComponent implements OnInit {
     });
   }
 
+  //enum convertor ?????
   getRoleString(roleNumber: number): string {
     return Role[roleNumber];
   }
 
+  //let a row be editable
   toggleEditRow(index: number): void {
     if (this.editedRow === index) {
       this.saveRow();
@@ -135,6 +147,7 @@ export class ManageShiftsComponent implements OnInit {
     }
   }
 
+  //update the row if we are done with the edit
   editRow(index: number): void {
     this.editedRow = index;
     const shiftToEdit = this.shifts[index];
@@ -146,6 +159,7 @@ export class ManageShiftsComponent implements OnInit {
     console.log('Editing shift:', this.editShift);
   }
 
+  //save the row if we are done with the edit
   saveRow(): void {
     if (this.editedRow !== null) {
       const shiftToUpdate = this.shifts[this.editedRow];
@@ -175,6 +189,7 @@ export class ManageShiftsComponent implements OnInit {
     }
   }
 
+  //delete row if the button is clicked
   deleteShift(id: number): void {
     this.shiftService.deleteShift(id).subscribe(() => {
       console.log('Shift deleted successfully');

@@ -12,6 +12,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
+  //checks to see if hte log in is successful
   queryLogin(username: string, password: string): Observable<any> {
     this.username = username;
     return this.http.get<any>(`${this.apiUrl}`, {
@@ -22,6 +23,7 @@ export class LoginService {
       responseType: 'text' as 'json'
     });
   }
+
 
   getUser(): string {
     return this.username;

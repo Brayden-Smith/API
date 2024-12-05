@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 <app-logo-display></app-logo-display>
 
+<!--This is a form that creates input forms for making a new shift. runs onSubmit() when ready to create shift-->
 <div class="container">
     <button (click)="toggleForm()" class="form-button">{{ showForm ? 'Click to Close' : 'Create New Shift +' }}</button>
     <div *ngIf="showForm" class="form-container">
@@ -31,6 +32,8 @@
       </form>
     </div>
 
+  <!--Shows all current shifts. if edit button is clicked it turns that row into intput boxes
+  when done it updates that row. when edit it clicked it also shows delete button-->
 <div *ngIf="shifts.length > 0; else noShifts">
   <table>
     <thead>

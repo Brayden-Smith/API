@@ -4,7 +4,6 @@ import {Shift} from './models/shift.model';
 import {LogoDisplayComponent} from '../shared/display/logo-display/logo-display.component';
 import {NavbarComponent} from '../shared/display/navbars/navbars.component';
 import { DatePipe, CommonModule } from '@angular/common';
-import {User} from '../users/models/user.model';
 import {Role} from '../users/models/role.enum';
 
 @Component({
@@ -28,11 +27,13 @@ export class HomeComponent implements OnInit {
 
   constructor(private ShiftService: ShiftService) {}
 
+  //get all shifts
   ngOnInit(): void {
     this.username = localStorage.getItem('username') || 'User';
     this.loadShifts();
   }
 
+  //service call to get all shifts
   loadShifts(): void {
     this.ShiftService.getUserShifts(this.username).subscribe((shifts: Shift[]) => {
       this.userShifts = shifts;
@@ -41,6 +42,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  //figure out what the earliest shift is
   setNextShift(): void {
     if (this.userShifts.length > 0) {
       this.nextShift = this.userShifts.reduce((earliest, current) => {
@@ -50,6 +52,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  //figure out what workers are on the next shift
   loadWorkersOnNextShift(): void {
     if (this.nextShift) {
       this.ShiftService.getUsernamesForShift(this.nextShift.id).subscribe((workers: string[]) => {
@@ -60,11 +63,13 @@ export class HomeComponent implements OnInit {
     }
   }
 
+  //list all none next shifts
   setRemainingShifts(): void {
     const nextShiftDate = this.nextShift ? new Date(this.nextShift.dateTime) : new Date();
     this.remainingShifts = this.userShifts.filter(shift => new Date(shift.dateTime) > nextShiftDate);
   }
 
+  //sort the table based on which column was clicked
   sortOrder: { [key: string]: boolean } = {};
   sortTable(column: keyof Shift): void {
     const sortOrder = this.sortOrder[column] = !this.sortOrder[column];
@@ -72,11 +77,13 @@ export class HomeComponent implements OnInit {
       let aValue = a[column];
       let bValue = b[column];
 
+      //enum convert
       if (column === 'role') {
         aValue = Role[aValue as number];
         bValue = Role[bValue as number];
       }
 
+      //check for case sensitivity and nulls
       if (aValue === undefined || bValue === undefined) {
         return 0;
       }
@@ -96,6 +103,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  //enum convert
   roleByNumber(roleNumber: number): string {
     return Role[roleNumber];
   }
