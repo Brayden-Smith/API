@@ -16,12 +16,14 @@ namespace Schedule.Controllers
             _context = context;
         }
 
+        //gets all users
         [HttpGet]
         public async Task<IEnumerable<User>> GetUsers()
         {
             return await _context.Users.ToListAsync();
         }
 
+        //gets the role of a user
         [HttpGet("role/{username}")]
         public async Task<ActionResult<int>> GetUserRole(string username)
         {
@@ -32,6 +34,7 @@ namespace Schedule.Controllers
             return Ok(roleId);
         }
 
+        //makes a user
         [HttpPost]
         public async Task<ActionResult<User>> CreateUser([FromBody] User newUser)
         {
@@ -41,6 +44,7 @@ namespace Schedule.Controllers
             return CreatedAtAction(nameof(GetUsers), new { id = newUser.Id }, newUser);
         }
 
+        //updates a user
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] User updatedUser)
         {
@@ -62,6 +66,7 @@ namespace Schedule.Controllers
             return Ok(user);
         }
 
+        //deletes a user
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

@@ -18,11 +18,12 @@ namespace Schedule.Controllers
             _context = context;
         }
 
+        //checks to see if data base has logging in user
         [HttpGet]
         public async Task<IActionResult> QueryLogin(String username, String password)
         {
             var userExists = await _context.Users.AnyAsync(u => u.Username == username && u.Password == password);
-            //testing testing testing
+            //email commented out due to weird working
             if (userExists)
             {
                 /*

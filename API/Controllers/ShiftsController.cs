@@ -19,12 +19,14 @@ namespace Schedule.Controllers
             _context = context;
         }
 
+        //returns all shifts
         [HttpGet]
         public async Task<IEnumerable<Shift>> GetShifts()
         {
             return await _context.Shifts.ToListAsync();
         }
         
+        //returns all shifts for a specific user
         [HttpGet("user/{username}")]
         public async Task<IEnumerable<Shift>> GetUserShifts(string username)
         {
@@ -33,6 +35,8 @@ namespace Schedule.Controllers
                 .ToListAsync();
         }
         
+        
+        //returns all shifts that are unassigned
         [HttpGet("null-username")]
         public async Task<IEnumerable<Shift>> GetShiftsWithNullUsername()
         {
@@ -41,6 +45,8 @@ namespace Schedule.Controllers
                 .ToListAsync();
         }
         
+        
+        //changes the ownership of a shift
         [HttpPut("{id}/{username}")]
         public async Task<IActionResult> UpdateShiftUsername(int id, string? username)
         {
@@ -55,6 +61,7 @@ namespace Schedule.Controllers
             return NoContent();
         }
         
+        //makes a new shift in database
         [HttpPost]
         public async Task<ActionResult<Shift>> AddShift([FromBody] Shift newShift)
         {
@@ -66,6 +73,7 @@ namespace Schedule.Controllers
             return CreatedAtAction(nameof(GetShifts), new { id = newShift.Id }, newShift);
         }
         
+        //normal update feature
         [HttpPut("{id}/update")]
         public async Task<IActionResult> UpdateShift(int id, [FromBody] Shift updatedShift)
         {
@@ -100,6 +108,7 @@ namespace Schedule.Controllers
             return NoContent();
         }
         
+        //gets all the workers on a shifts day
         [HttpGet("{id}/usernames")]
         public async Task<ActionResult<IEnumerable<string>>> GetUsernamesInShift(int id)
         {
